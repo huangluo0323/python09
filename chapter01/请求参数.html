@@ -1,0 +1,917 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book Flask 框架 -->
+    <head>
+        <!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>请求参数 | Flask 框架</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="author" content="huangguifeng">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-prism/prism.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-tbfed-pagefooter/footer.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../chapter01/abort函数.html" />
+    
+    
+    <link rel="prev" href="../chapter01/路由配置.html" />
+    
+
+        <!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+        
+    <div class="book"
+        data-level="1.3"
+        data-chapter-title="请求参数"
+        data-filepath="chapter01/请求参数.md"
+        data-basepath=".."
+        data-revision="Mon May 14 2018 11:44:22 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Flask 框架
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="chapter01/简介.html">
+            
+                
+                    <a href="../chapter01/简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Flask 视图
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="chapter01/创建项目.html">
+            
+                
+                    <a href="../chapter01/创建项目.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        创建项目
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter01/路由配置.html">
+            
+                
+                    <a href="../chapter01/路由配置.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        路由配置
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="chapter01/请求参数.html">
+            
+                
+                    <a href="../chapter01/请求参数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        请求参数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="chapter01/abort函数.html">
+            
+                
+                    <a href="../chapter01/abort函数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        abort函数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="chapter01/重定向.html">
+            
+                
+                    <a href="../chapter01/重定向.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        重定向
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="chapter01/响应.html">
+            
+                
+                    <a href="../chapter01/响应.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        响应数据
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="chapter01/cookie.html">
+            
+                
+                    <a href="../chapter01/cookie.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        Cookie
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter01/session.html">
+            
+                
+                    <a href="../chapter01/session.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        Session
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="chapter01/请求钩子.html">
+            
+                
+                    <a href="../chapter01/请求钩子.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        请求钩子
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="chapter01/上下文.html">
+            
+                
+                    <a href="../chapter01/上下文.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.</b>
+                        
+                        Flask 上下文
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="chapter02/index.html">
+            
+                
+                    <a href="../chapter02/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Flask 模板
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="chapter02/jinja2模板介绍.html">
+            
+                
+                    <a href="../chapter02/jinja2模板介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        jinja2模板介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="chapter02/模板渲染.html">
+            
+                
+                    <a href="../chapter02/模板渲染.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        模板渲染
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="chapter02/jinja2语法.html">
+            
+                
+                    <a href="../chapter02/jinja2语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        基本语法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="chapter02/过滤器.html">
+            
+                
+                    <a href="../chapter02/过滤器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        过滤器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="chapter02/Flask_WTF扩展.html">
+            
+                
+                    <a href="../chapter02/Flask_WTF扩展.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Flask-WTF扩展
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="chapter02/宏.html">
+            
+                
+                    <a href="../chapter02/宏.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        jinja2 宏
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="chapter02/模板继承.html">
+            
+                
+                    <a href="../chapter02/模板继承.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        模板继承
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="chapter02/模板包含.html">
+            
+                
+                    <a href="../chapter02/模板包含.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        模板包含
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="chapter02/特殊变量.html">
+            
+                
+                    <a href="../chapter02/特殊变量.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.9.</b>
+                        
+                        特殊变量
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="chapter03/index.html">
+            
+                
+                    <a href="../chapter03/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Flask 模型
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="chapter03/数据库连接.html">
+            
+                
+                    <a href="../chapter03/数据库连接.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        数据库连接
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="chapter03/模型类创建.html">
+            
+                
+                    <a href="../chapter03/模型类创建.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        创建模型类
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="chapter03/数据保存.html">
+            
+                
+                    <a href="../chapter03/数据保存.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        数据保存
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="chapter03/数据查询.html">
+            
+                
+                    <a href="../chapter03/数据查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        数据查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="chapter03/Flask-Script扩展命令行.html">
+            
+                
+                    <a href="../chapter03/Flask-Script扩展命令行.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        Flask-Script扩展命令行
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="chapter03/数据库迁移.html">
+            
+                
+                    <a href="../chapter03/数据库迁移.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        数据库迁移
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="chapter03/综合案例.html">
+            
+                
+                    <a href="../chapter03/综合案例.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                        综合案例
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="chapter04/index.html">
+            
+                
+                    <a href="../chapter04/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Flask 常用功能
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="chapter04/蓝图.html">
+            
+                
+                    <a href="../chapter04/蓝图.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Flask 蓝图
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="chapter04/邮件扩展.html">
+            
+                
+                    <a href="../chapter04/邮件扩展.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Flask 邮件扩展
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="chapter04/celery.html">
+            
+                
+                    <a href="../chapter04/celery.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        Flask celery应用
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Flask 框架</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="request&#x5BF9;&#x8C61;">request&#x5BF9;&#x8C61;</h2>
+<p>Flask&#x4E2D;&#x83B7;&#x53D6;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#xFF0C;&#x4E0E;django&#x4E2D;&#x4E0D;&#x540C;&#xFF0C;django&#x89C6;&#x56FE;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x662F;HttpRequest&#x5BF9;&#x8C61;&#xFF0C;Flask&#x4E2D;&#x9700;&#x8981;&#x5BFC;&#x5165;&#x4ECE;flask&#x4E2D;&#x5BFC;&#x5165;request&#x5BF9;&#x8C61;&#xFF0C;request&#x5BF9;&#x8C61;&#x4E2D;&#x5DF2;&#x7ECF;&#x5C01;&#x88C5;&#x6240;&#x6709;&#x7684;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5C5E;&#x6027;</th>
+<th>&#x529F;&#x80FD;</th>
+<th style="text-align:center">&#x7C7B;&#x578B;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>form</td>
+<td>&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x89E3;&#x6790;&#x8FC7;&#x7684;&#x4ECE; POST &#x6216; PUT &#x8BF7;&#x6C42;&#x53D1;&#x9001;&#x7684;&#x8868;&#x5355;&#x5BF9;&#x8C61;&#x7684; MultiDict &#x3002;&#x8BF7;&#x6CE8;&#x610F;&#x4E0A;&#x4F20;&#x7684;&#x6587;&#x4EF6;&#x4F1A;&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x800C;&#x662F;&#x5728; files &#x5C5E;&#x6027;&#x4E2D;&#x3002;</td>
+<td style="text-align:center">MultiDict</td>
+</tr>
+<tr>
+<td>args</td>
+<td>&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x89E3;&#x6790;&#x8FC7;&#x7684;&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;&#xFF08;URL &#x4E2D;&#x95EE;&#x53F7;&#x540E;&#x7684;&#x90E8;&#x5206;&#xFF09;&#x5185;&#x5BB9;&#x7684;</td>
+<td style="text-align:center">MultiDict</td>
+</tr>
+<tr>
+<td>values</td>
+<td>&#x4E00;&#x4E2A;&#x5305;&#x542B; form &#x548C; args &#x5168;&#x90E8;&#x5185;&#x5BB9;</td>
+<td style="text-align:center">CombinedMultiDict</td>
+</tr>
+<tr>
+<td>cookies</td>
+<td>&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x8BF7;&#x6C42;&#x4E2D;&#x4F20;&#x9001;&#x7684;&#x6240;&#x6709; cookie &#x5185;&#x5BB9;</td>
+<td style="text-align:center">dict</td>
+</tr>
+<tr>
+<td>headers</td>
+<td>&#x8BF7;&#x6C42;&#x5934;&#x5B58;&#x4E3A;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;&#x5B57;&#x5178;&#x7684;&#x5BF9;&#x8C61;</td>
+<td style="text-align:center">dict</td>
+</tr>
+<tr>
+<td>method</td>
+<td>&#x5F53;&#x524D;&#x8BF7;&#x6C42;&#x7684; HTTP &#x65B9;&#x6CD5; (POST &#xFF0C; GET &#x7B49;&#x7B49;)</td>
+<td style="text-align:center">string</td>
+</tr>
+<tr>
+<td>files</td>
+<td>&#x4E00;&#x4E2A;&#x5305;&#x542B; POST &#x548C; PUT &#x8BF7;&#x6C42;&#x4E2D;&#x4E0A;&#x4F20;&#x7684;&#x6587;&#x4EF6;&#x7684; MultiDict &#x3002;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x4E3A; FileStorage &#x5BF9;&#x8C61;&#x3002;&#x5176;&#x57FA;&#x672C;&#x7684;&#x884C;&#x4E3A;&#x7C7B;&#x4F3C;&#x4F60;&#x5728; Python &#x4E2D;&#x89C1;&#x5230;&#x7684;&#x6807;&#x51C6;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#xFF0C;&#x5DEE;&#x5F02;&#x5728;&#x4E8E;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x6709;&#x4E00;&#x4E2A; save() &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x628A;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x5230;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E0A;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8DEF;&#x5F84;&#xFF1A;
+path
+script_root
+url
+base_url
+url_root </p>
+<p>&#x6BD4;&#x5982;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;&#x94FE;&#x63A5;&#xFF1A;</p>
+<p><a href="http://www.example.com/myapplication/page.html?x=y" target="_blank">http://www.example.com/myapplication/page.html?x=y</a></p>
+<p>&#x8FD9;&#x4E2A;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x7684;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x4F1A;&#x4E3A;&#x5982;&#x4E0B;:</p>
+<table>
+<thead>
+<tr>
+<th>&#x5C5E;&#x6027;</th>
+<th>&#x83B7;&#x53D6;&#x8DEF;&#x5F84;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path</td>
+<td>/page.html</td>
+</tr>
+<tr>
+<td>script_root</td>
+<td>/myapplication</td>
+</tr>
+<tr>
+<td>base_url</td>
+<td><a href="http://www.example.com/myapplication/page.html" target="_blank">http://www.example.com/myapplication/page.html</a></td>
+</tr>
+<tr>
+<td>url</td>
+<td><a href="http://www.example.com/myapplication/page.html?x=y" target="_blank">http://www.example.com/myapplication/page.html?x=y</a></td>
+</tr>
+<tr>
+<td>url_root</td>
+<td><a href="http://www.example.com/myapplication/" target="_blank">http://www.example.com/myapplication/</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="postman-&#x63D2;&#x4EF6;&#x4F7F;&#x7528;">Postman &#x63D2;&#x4EF6;&#x4F7F;&#x7528;</h2>
+<p>&#x8C37;&#x6B4C;&#x6D4F;&#x89C8;&#x5668;&#x52A0;&#x8F7D;&#x6269;&#x5C55;&#x7A0B;&#x5E8F;</p>
+<div id="img">
+    <img src="img/09.jpg" width="800">
+</div>
+
+<p>&#x5C06;&#x89E3;&#x538B;&#x597D;&#x7684;&#x6269;&#x5C55;&#x7A0B;&#x5E8F;&#x52A0;&#x8F7D;&#x8FDB;&#x53BB;&#x542F;&#x52A8;&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x542F;&#x52A8;&#x4F1A;&#x8981;&#x6C42;&#x586B;&#x5199;&#x4E00;&#x4E9B;&#x5185;&#x5BB9;&#xFF0C;&#x76F4;&#x63A5;&#x5C06;&#x7A97;&#x53E3;&#x5173;&#x95ED;&#xFF0C;&#x7B2C;&#x4E8C;&#x6B21;&#x542F;&#x52A8;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x586B;&#x5199;&#x4E86;&#x3002;</p>
+<p>&#x5229;&#x7528;&#x8FD9;&#x4E2A;&#x63D2;&#x4EF6;&#x4E86;&#x4EE5;&#x6A21;&#x62DF;&#x6D4F;&#x89C8;&#x5668;&#x4EE5;&#x4E0D;&#x540C;&#x7684;&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#x5411;&#x670D;&#x52A1;&#x5668;&#x63D0;&#x4EA4;&#x53C2;&#x6570;&#x3002;</p>
+<div id="img">
+    <img src="img/10.jpg" width="800">
+</div>
+
+
+<pre><code class="lang-python"><span class="token comment" spellcheck="true"># coding=utf-8</span>
+
+<span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span>request
+
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+
+
+@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">&apos;/&apos;</span><span class="token punctuation">,</span>methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&apos;GET&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;POST&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token comment" spellcheck="true"># form &#x83B7;&#x53D6;post&#x63D0;&#x4EA4;&#x7684;&#x6570;&#x636E;</span>
+    post_dict <span class="token operator">=</span> request<span class="token punctuation">.</span>form
+    <span class="token keyword">print</span><span class="token punctuation">(</span>post_dict<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># args &#x83B7;&#x53D6;&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5373;url &#xFF1F; &#x540E;&#x9762;&#x7684;&#x53C2;&#x6570;</span>
+    query_dict <span class="token operator">=</span> request<span class="token punctuation">.</span>args
+    <span class="token keyword">print</span><span class="token punctuation">(</span>query_dict<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># &#x83B7;&#x53D6;&#x6240;&#x6709;&#x67E5;&#x8BE2;&#x53C2;&#x6570;&#xFF0C;&#x8DDF;post&#x53C2;&#x6570;</span>
+    all_dict <span class="token operator">=</span> request<span class="token punctuation">.</span>values
+    <span class="token keyword">print</span><span class="token punctuation">(</span>all_dict<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># &#x83B7;&#x53D6;cookie</span>
+    cookie <span class="token operator">=</span> request<span class="token punctuation">.</span>cookies
+    <span class="token keyword">print</span><span class="token punctuation">(</span>cookie<span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># &#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x53C2;&#x6570;&#x503C;get&#x65B9;&#x6CD5;,&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x4E2A;key&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x4E3A;&#x4E86;&#x4E0D;&#x62A5;&#x9519;&#x53EF;&#x4EE5;&#x4F20;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;key&#xFF0C;&#x5C06;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</span>
+    <span class="token comment" spellcheck="true"># &#x5982;&#x679C;&#x662F;&#x591A;&#x503C;&#x4F7F;&#x7528;getlist&#x65B9;&#x6CD5;,&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x7A7A;&#x5217;&#x8868;&#x3002;</span>
+    a <span class="token operator">=</span> query_dict<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">&apos;a&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;&apos;</span><span class="token punctuation">)</span>
+    a <span class="token operator">=</span> query_dict<span class="token punctuation">.</span>getlist<span class="token punctuation">(</span><span class="token string">&apos;b&apos;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string">&apos;ok&apos;</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&apos;__main__&apos;</span><span class="token punctuation">:</span>
+    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="&#x6587;&#x4EF6;&#x4E0A;&#x4F20;">&#x6587;&#x4EF6;&#x4E0A;&#x4F20;</h2>
+<p>&#x5DF2;&#x4E0A;&#x4F20;&#x7684;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x5728;&#x5185;&#x5B58;&#x6216;&#x662F;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;&#x7684; files &#x5C5E;&#x6027;&#x8BBF;&#x95EE;&#x5B83;&#x4EEC;&#x3002;&#x6BCF;&#x4E2A;&#x4E0A;&#x4F20;&#x7684;&#x6587;&#x4EF6;&#x90FD;&#x4F1A;&#x5B58;&#x50A8;&#x5728;&#x8FD9;&#x4E2A;&#x5B57;&#x5178;&#x91CC;&#x3002;&#x5B83;&#x8868;&#x73B0;&#x8FD1;&#x4E4E;&#x4E3A;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#x7684; Python file &#x5BF9;&#x8C61;&#xFF0C;&#x4F46;&#x5B83;&#x8FD8;&#x6709;&#x4E00;&#x4E2A; save() &#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5141;&#x8BB8;&#x4F60;&#x628A;&#x6587;&#x4EF6;&#x4FDD;&#x5B58;&#x5230;&#x670D;&#x52A1;&#x5668;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E0A;&#x3002;</p>
+<pre><code class="lang-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> request
+
+@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">&apos;/upload&apos;</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&apos;GET&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;POST&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">upload_file</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> request<span class="token punctuation">.</span>method <span class="token operator">==</span> <span class="token string">&apos;POST&apos;</span><span class="token punctuation">:</span>
+        f <span class="token operator">=</span> request<span class="token punctuation">.</span>files<span class="token punctuation">[</span><span class="token string">&apos;the_file&apos;</span><span class="token punctuation">]</span>
+        f<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">&apos;uploaded_file.txt&apos;</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x77E5;&#x9053;&#x4E0A;&#x4F20;&#x524D;&#x6587;&#x4EF6;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE; filename &#x5C5E;&#x6027;&#x3002;&#x4F46;&#x8BF7;&#x8BB0;&#x4F4F;&#xFF0C; &#x6C38;&#x8FDC;&#x4E0D;&#x8981;&#x4FE1;&#x4EFB;&#x8FD9;&#x4E2A;&#x503C;&#xFF0C;&#x8FD9;&#x4E2A;&#x503C;&#x662F;&#x53EF;&#x4EE5;&#x4F2A;&#x9020;&#x7684;&#x3002;&#x5982;&#x679C;&#x4F60;&#x8981;&#x628A;&#x6587;&#x4EF6;&#x6309;&#x5BA2;&#x6237;&#x7AEF;&#x63D0;&#x4F9B;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x5B58;&#x50A8;&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF0C;&#x90A3;&#x4E48;&#x8BF7;&#x628A;&#x5B83;&#x4F20;&#x9012;&#x7ED9; Werkzeug  &#x63D0;&#x4F9B;&#x7684; secure_filename() &#x51FD;&#x6570;:</p>
+<p>&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x5B83;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B89;&#x5168;&#x7684;&#x6587;&#x4EF6;&#x540D;,&#x9632;&#x6B62;&#x4E0A;&#x4F20;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x4E0D;&#x7B26;&#x5408;&#x670D;&#x52A1;&#x5668;&#x6587;&#x4EF6;&#x547D;&#x540D;&#x8981;&#x6C42;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>&gt;&gt;&gt;from werkzeug.utils import secure_filename
+&gt;&gt;&gt; secure_filename(&quot;My cool movie.mov&quot;)
+&apos;My_cool_movie.mov&apos;
+&gt;&gt;&gt; secure_filename(&quot;../../../etc/passwd&quot;)
+&apos;etc_passwd&apos;
+&gt;&gt;&gt; secure_filename(u&apos;i contain cool \xfcml\xe4uts.txt&apos;)
+&apos;i_contain_cool_umlauts.txt&apos;
+</code></pre><pre><code class="lang-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> request
+<span class="token keyword">from</span> werkzeug<span class="token punctuation">.</span>utils <span class="token keyword">import</span> secure_filename
+
+@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">&apos;/upload&apos;</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&apos;GET&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;POST&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">upload_file</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># &#x5224;&#x65AD;&#x662F;Post&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;  </span>
+    <span class="token keyword">if</span> request<span class="token punctuation">.</span>method <span class="token operator">==</span> <span class="token string">&apos;POST&apos;</span><span class="token punctuation">:</span>
+        f <span class="token operator">=</span> request<span class="token punctuation">.</span>files<span class="token punctuation">[</span><span class="token string">&apos;the_file&apos;</span><span class="token punctuation">]</span>
+        f<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">&apos;./uploads/&apos;</span> <span class="token operator">+</span> secure_filename<span class="token punctuation">(</span>f<span class="token punctuation">.</span>filename<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;secure_filename &#x4E0D;&#x80FD;&#x8BC6;&#x522B;&#x4E2D;&#x6587;&#x3002;
+secure_filename&#x4EC5;&#x8FD4;&#x56DE;ASCII&#x5B57;&#x7B26;&#x3002;&#x6240;&#x4EE5;&#xFF0C; &#x975E;ASCII&#xFF08;&#x6BD4;&#x5982;&#x6C49;&#x5B57;&#xFF09;&#x4F1A;&#x88AB;&#x8FC7;&#x6EE4;&#x6389;&#xFF0C;&#x7A7A;&#x683C;&#x4F1A;&#x88AB;&#x66FF;&#x6362;&#x4E3A;&#x4E0B;&#x5212;&#x7EBF;&#x3002;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x5904;&#x7406;&#x6587;&#x4EF6;&#x540D;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x6216;&#x662F;&#x5728;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x524D;&#x5C06;&#x4E2D;&#x6587;&#x66FF;&#x6362;&#x4E3A;&#x62FC;&#x97F3;&#x6216;&#x662F;&#x82F1;&#x6587;&#x3002;</p>
+<p>secure_filename &#x51FD;&#x6570;&#x6E90;&#x7801;</p>
+<pre><code class="lang-python">
+<span class="token keyword">def</span> <span class="token function">secure_filename</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    r<span class="token triple-quoted-string string">&quot;&quot;&quot;Pass it a filename and it will return a secure version of it.  This
+    filename can then safely be stored on a regular file system and passed
+    to :func:`os.path.join`.  The filename returned is an ASCII only string
+    for maximum portability.
+
+    On windows systems the function also makes sure that the file is not
+    named after one of the special device files.
+
+    &gt;&gt;&gt; secure_filename(&quot;My cool movie.mov&quot;)
+    &apos;My_cool_movie.mov&apos;
+    &gt;&gt;&gt; secure_filename(&quot;../../../etc/passwd&quot;)
+    &apos;etc_passwd&apos;
+    &gt;&gt;&gt; secure_filename(u&apos;i contain cool \xfcml\xe4uts.txt&apos;)
+    &apos;i_contain_cool_umlauts.txt&apos;
+
+    The function might return an empty filename.  It&apos;s your responsibility
+    to ensure that the filename is unique and that you generate random
+    filename if the function returned an empty one.
+
+    .. versionadded:: 0.5
+
+    :param filename: the filename to secure
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">if</span> isinstance<span class="token punctuation">(</span>filename<span class="token punctuation">,</span> text_type<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">from</span> unicodedata <span class="token keyword">import</span> normalize
+        filename <span class="token operator">=</span> normalize<span class="token punctuation">(</span><span class="token string">&apos;NFKD&apos;</span><span class="token punctuation">,</span> filename<span class="token punctuation">)</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">&apos;ascii&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;ignore&apos;</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> PY2<span class="token punctuation">:</span>
+            filename <span class="token operator">=</span> filename<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">&apos;ascii&apos;</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> sep <span class="token keyword">in</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>sep<span class="token punctuation">,</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>altsep<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> sep<span class="token punctuation">:</span>
+            filename <span class="token operator">=</span> filename<span class="token punctuation">.</span>replace<span class="token punctuation">(</span>sep<span class="token punctuation">,</span> <span class="token string">&apos; &apos;</span><span class="token punctuation">)</span>
+    filename <span class="token operator">=</span> str<span class="token punctuation">(</span>_filename_ascii_strip_re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span><span class="token string">&apos;&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;_&apos;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>
+                   filename<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token string">&apos;._&apos;</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># on nt a couple of special files are present in each folder.  We</span>
+    <span class="token comment" spellcheck="true"># have to ensure that the target file is not such a filename.  In</span>
+    <span class="token comment" spellcheck="true"># this case we prepend an underline</span>
+    <span class="token keyword">if</span> os<span class="token punctuation">.</span>name <span class="token operator">==</span> <span class="token string">&apos;nt&apos;</span> <span class="token operator">and</span> filename <span class="token operator">and</span> \
+       filename<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">&apos;.&apos;</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">in</span> _windows_device_files<span class="token punctuation">:</span>
+        filename <span class="token operator">=</span> <span class="token string">&apos;_&apos;</span> <span class="token operator">+</span> filename
+
+    <span class="token keyword">return</span> filename
+</code></pre>
+<footer class="page-footer"><span class="copyright">Flask &#x6846;&#x67B6; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-05-02 14:41:00
+</span></footer>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../chapter01/路由配置.html" class="navigation navigation-prev " aria-label="Previous page: 路由配置"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../chapter01/abort函数.html" class="navigation navigation-next " aria-label="Next page: abort函数"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/fontsettings.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"tbfed-pagefooter":{"copyright":"Flask 框架","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"fontSettings":{"theme":"white","family":"msyh","size":2},"pdf":{"pageNumbers":true,"fontSize":18,"paperSize":"a4","margin":{"right":30,"left":30,"top":30,"bottom":50}},"prism":{},"splitter":{},"fontsettings":{"family":"sans","size":2,"theme":"white"},"toggle-chapters":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+    </body>
+    <!-- End of book Flask 框架 -->
+</html>

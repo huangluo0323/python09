@@ -1,0 +1,875 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book Flask 框架 -->
+    <head>
+        <!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>过滤器 | Flask 框架</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="author" content="huangguifeng">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-prism/prism.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-tbfed-pagefooter/footer.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../chapter02/Flask_WTF扩展.html" />
+    
+    
+    <link rel="prev" href="../chapter02/jinja2语法.html" />
+    
+
+        <!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+        
+    <div class="book"
+        data-level="2.4"
+        data-chapter-title="过滤器"
+        data-filepath="chapter02/过滤器.md"
+        data-basepath=".."
+        data-revision="Mon May 14 2018 11:44:22 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Flask 框架
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="chapter01/简介.html">
+            
+                
+                    <a href="../chapter01/简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Flask 视图
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="chapter01/创建项目.html">
+            
+                
+                    <a href="../chapter01/创建项目.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        创建项目
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter01/路由配置.html">
+            
+                
+                    <a href="../chapter01/路由配置.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        路由配置
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter01/请求参数.html">
+            
+                
+                    <a href="../chapter01/请求参数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        请求参数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="chapter01/abort函数.html">
+            
+                
+                    <a href="../chapter01/abort函数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        abort函数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="chapter01/重定向.html">
+            
+                
+                    <a href="../chapter01/重定向.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        重定向
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="chapter01/响应.html">
+            
+                
+                    <a href="../chapter01/响应.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        响应数据
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="chapter01/cookie.html">
+            
+                
+                    <a href="../chapter01/cookie.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        Cookie
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter01/session.html">
+            
+                
+                    <a href="../chapter01/session.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        Session
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="chapter01/请求钩子.html">
+            
+                
+                    <a href="../chapter01/请求钩子.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        请求钩子
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="chapter01/上下文.html">
+            
+                
+                    <a href="../chapter01/上下文.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.</b>
+                        
+                        Flask 上下文
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="chapter02/index.html">
+            
+                
+                    <a href="../chapter02/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Flask 模板
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="chapter02/jinja2模板介绍.html">
+            
+                
+                    <a href="../chapter02/jinja2模板介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        jinja2模板介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="chapter02/模板渲染.html">
+            
+                
+                    <a href="../chapter02/模板渲染.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        模板渲染
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="chapter02/jinja2语法.html">
+            
+                
+                    <a href="../chapter02/jinja2语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        基本语法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4" data-path="chapter02/过滤器.html">
+            
+                
+                    <a href="../chapter02/过滤器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        过滤器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="chapter02/Flask_WTF扩展.html">
+            
+                
+                    <a href="../chapter02/Flask_WTF扩展.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Flask-WTF扩展
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="chapter02/宏.html">
+            
+                
+                    <a href="../chapter02/宏.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        jinja2 宏
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="chapter02/模板继承.html">
+            
+                
+                    <a href="../chapter02/模板继承.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        模板继承
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="chapter02/模板包含.html">
+            
+                
+                    <a href="../chapter02/模板包含.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        模板包含
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="chapter02/特殊变量.html">
+            
+                
+                    <a href="../chapter02/特殊变量.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.9.</b>
+                        
+                        特殊变量
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="chapter03/index.html">
+            
+                
+                    <a href="../chapter03/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Flask 模型
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="chapter03/数据库连接.html">
+            
+                
+                    <a href="../chapter03/数据库连接.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        数据库连接
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="chapter03/模型类创建.html">
+            
+                
+                    <a href="../chapter03/模型类创建.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        创建模型类
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="chapter03/数据保存.html">
+            
+                
+                    <a href="../chapter03/数据保存.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        数据保存
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="chapter03/数据查询.html">
+            
+                
+                    <a href="../chapter03/数据查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        数据查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="chapter03/Flask-Script扩展命令行.html">
+            
+                
+                    <a href="../chapter03/Flask-Script扩展命令行.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        Flask-Script扩展命令行
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="chapter03/数据库迁移.html">
+            
+                
+                    <a href="../chapter03/数据库迁移.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        数据库迁移
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="chapter03/综合案例.html">
+            
+                
+                    <a href="../chapter03/综合案例.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                        综合案例
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="chapter04/index.html">
+            
+                
+                    <a href="../chapter04/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Flask 常用功能
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="chapter04/蓝图.html">
+            
+                
+                    <a href="../chapter04/蓝图.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Flask 蓝图
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="chapter04/邮件扩展.html">
+            
+                
+                    <a href="../chapter04/邮件扩展.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Flask 邮件扩展
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="chapter04/celery.html">
+            
+                
+                    <a href="../chapter04/celery.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        Flask celery应用
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Flask 框架</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="&#x8FC7;&#x6EE4;&#x5668;">&#x8FC7;&#x6EE4;&#x5668;</h2>
+<p>&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x672C;&#x8D28;&#x5C31;&#x662F;&#x51FD;&#x6570;&#x3002;&#x6709;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x4E0D;&#x4EC5;&#x4EC5;&#x53EA;&#x662F;&#x9700;&#x8981;&#x8F93;&#x51FA;&#x53D8;&#x91CF;&#x7684;&#x503C;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x53D8;&#x91CF;&#x7684;&#x663E;&#x793A;&#xFF0C;&#x751A;&#x81F3;&#x683C;&#x5F0F;&#x5316;&#x3001;&#x8FD0;&#x7B97;&#x7B49;&#x7B49;&#xFF0C;&#x8FD9;&#x5C31;&#x7528;&#x5230;&#x4E86;&#x8FC7;&#x6EE4;&#x5668;&#x3002; </p>
+<p>&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x4E3A;&#xFF1A;&#x53D8;&#x91CF;&#x540D; | &#x8FC7;&#x6EE4;&#x5668;&#x3002;</p>
+<p>&#x5E38;&#x7528;&#x8FC7;&#x6EE4;&#x5668;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#x5B57;&#x7B26;&#x4E32;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x8FC7;&#x6EE4;&#x5668;</th>
+<th>&#x4F5C;&#x7528;</th>
+<th>&#x793A;&#x4F8B;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>safe</td>
+<td>&#x7981;&#x7528;&#x8F6C;&#x4E49;</td>
+<td>{ {  &apos;&lt;em&gt;hello&lt;/em&gt;&apos;  &#x4E28; safe <span>} }</span></td>
+</tr>
+<tr>
+<td>capitalize</td>
+<td>&#x628A;&#x53D8;&#x91CF;&#x503C;&#x7684;&#x9996;&#x5B57;&#x6BCD;&#x8F6C;&#x6210;&#x5927;&#x5199;&#xFF0C;&#x5176;&#x4F59;&#x5B57;&#x6BCD;&#x8F6C;&#x5C0F;&#x5199;</td>
+<td>{ { &apos;hello&apos;  &#x4E28; capitalize } }</td>
+</tr>
+<tr>
+<td>lower</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6210;&#x5C0F;&#x5199;</td>
+<td>{ { &apos;hello&apos;  &#x4E28; lower } }</td>
+</tr>
+<tr>
+<td>upper</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6210;&#x5927;&#x5199;</td>
+<td>{ { &apos;hello&apos;  &#x4E28; lower } }</td>
+</tr>
+<tr>
+<td>title</td>
+<td>&#x628A;&#x503C;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x7684;&#x9996;&#x5B57;&#x6BCD;&#x90FD;&#x8F6C;&#x6210;&#x5927;&#x5199;</td>
+<td>{ { &apos;hello world&apos;  &#x4E28; title } }</td>
+</tr>
+<tr>
+<td>trim</td>
+<td>&#x628A;&#x503C;&#x7684;&#x9996;&#x5C3E;&#x7A7A;&#x683C;&#x53BB;&#x6389;</td>
+<td>{ { &apos;    hello world     &apos;  &#x4E28; trim } }</td>
+</tr>
+<tr>
+<td>reverse</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x53CD;&#x8F6C;</td>
+<td>{ { &apos;hello&apos;  &#x4E28; reverse } }</td>
+</tr>
+<tr>
+<td>format</td>
+<td>&#x683C;&#x5F0F;&#x5316;&#x8F93;&#x51FA;</td>
+<td>{ { &apos;%s is %d&apos;  &#x4E28; format(&apos;name&apos;,17) } }</td>
+</tr>
+<tr>
+<td>striptags</td>
+<td>&#x6E32;&#x67D3;&#x4E4B;&#x524D;&#x628A;&#x503C;&#x4E2D;&#x6240;&#x6709;&#x7684;HTML&#x6807;&#x7B7E;&#x90FD;&#x5220;&#x6389;</td>
+<td>{ { &apos;&lt;em&gt;hello&lt;/em&gt;&apos;  &#x4E28; striptags } }</td>
+</tr>
+<tr>
+<td>truncate</td>
+<td>&#x622A;&#x53D6;&#x524D;&#x51E0;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x540E;&#x9762;&#x4F7F;&#x7528;....&#x8868;&#x793A;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x622A;&#x53D6;&#x51E0;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x662F;&#x5426;&#x4F7F;&#x7528;...&#x663E;&#x793A;</td>
+<td>{ { name  &#x4E28; truncate(3, True) } }</td>
+</tr>
+<tr>
+<td>escape</td>
+<td>&#x5F00;&#x542F;&#x8F6C;&#x4E49;</td>
+<td>{ { &apos;&lt;em&gt;name&lt;/em&gt;&apos; &#x4E28; escape } }</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5217;&#x8868;&#x64CD;&#x4F5C;:</p>
+<table>
+<thead>
+<tr>
+<th>&#x8FC7;&#x6EE4;&#x5668;</th>
+<th>&#x4F5C;&#x7528;</th>
+<th>&#x793A;&#x4F8B;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>first</td>
+<td>&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</td>
+<td>{ { [1,2,3,4,5,6] &#x4E28; first } }</td>
+</tr>
+<tr>
+<td>last</td>
+<td>&#x53D6;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</td>
+<td>{ { [1,2,3,4,5,6] &#x4E28; last } }</td>
+</tr>
+<tr>
+<td>length</td>
+<td>&#x83B7;&#x53D6;&#x5217;&#x8868;&#x957F;&#x5EA6;</td>
+<td>{ { [1,2,3,4,5,6] &#x4E28; length } }</td>
+</tr>
+<tr>
+<td>sum</td>
+<td>&#x5217;&#x8868;&#x6C42;&#x548C;</td>
+<td>{ { [1,2,3,4,5,6] &#x4E28; sum } }</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>&#x5217;&#x8868;&#x6392;&#x5E8F;</td>
+<td>{ { [6,2,3,1,5,4] &#x4E28; sort } }</td>
+</tr>
+</tbody>
+</table>
+<p>&#x6570;&#x503C;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x8FC7;&#x6EE4;&#x5668;</th>
+<th>&#x4F5C;&#x7528;</th>
+<th>&#x793A;&#x4F8B;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>round</td>
+<td>&#x56DB;&#x820D;&#x4E94;&#x5165;&#x53D6;&#x6574;</td>
+<td>{ { 12.8888 &#x4E28; round } } &#x5F97;&#x5230;13.0</td>
+</tr>
+<tr>
+<td>round</td>
+<td>&#x5411;&#x4E0B;&#x622A;&#x53D6;&#x5230;&#x5C0F;&#x6570;&#x70B9;&#x540E;2&#x4F4D;&#xFF0C;&#x8FD4;&#x56DE;12.88</td>
+<td>{ { 12.8888 &#x4E28; round(2, &apos;floor&apos;) } }&#x5F97;&#x5230;13.89</td>
+</tr>
+<tr>
+<td>abs</td>
+<td>&#x7EDD;&#x5BF9;&#x503C;&#xFF0C;&#x8FD4;&#x56DE;12</td>
+<td>{ { -12 &#x4E28; abs } } &#x5F97;&#x5230;12</td>
+</tr>
+</tbody>
+</table>
+<p><a href="http://jinja.pocoo.org/docs/dev/templates/#builtin-filters" target="_blank">&#x66F4;&#x591A;&#x5185;&#x7F6E;&#x8FC7;&#x6EE4;&#x5668;&#x67E5;&#x770B;jinja2&#x5B98;&#x7F51;</a></p>
+<h2 id="&#x81EA;&#x5B9A;&#x4E49;&#x8FC7;&#x6EE4;&#x5668;">&#x81EA;&#x5B9A;&#x4E49;&#x8FC7;&#x6EE4;&#x5668;</h2>
+<p>&#x5F53;&#x6A21;&#x677F;&#x5185;&#x7F6E;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x4E0D;&#x80FD;&#x6EE1;&#x8DB3;&#x9700;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x8FC7;&#x6EE4;&#x5668;&#x3002;</p>
+<p>&#x81EA;&#x5B9A;&#x4E49;&#x8FC7;&#x6EE4;&#x5668;&#x6709;&#x4E24;&#x79CD;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<p>&#x7B2C;&#x4E00;&#x79CD;&#x662F;&#x901A;&#x8FC7;Flask&#x5E94;&#x7528;&#x5BF9;&#x8C61;&#x7684;add_template_filter&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x7B2C;&#x4E8C;&#x79CD;&#x662F;&#x901A;&#x8FC7; template_filter &#x88C5;&#x9970;&#x5668;&#x6765;&#x5B9E;&#x73B0;&#x81EA;&#x5B9A;&#x4E49;&#x8FC7;&#x6EE4;&#x5668;&#x3002;</p>
+<p>&#x81EA;&#x5B9A;&#x4E49;&#x8FC7;&#x6EE4;&#x5668;&#x4E0D;&#x80FD;&#x548C;&#x5185;&#x7F6E;&#x8FC7;&#x6EE4;&#x5668;&#x91CD;&#x540D;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x5C06;&#x5185;&#x7F6E;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x8986;&#x76D6;&#x6389;&#x3002;</p>
+<p>&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="token keyword">def</span> <span class="token function">filter_mod_1</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> num <span class="token operator">%</span> <span class="token number">2</span>
+
+<span class="token comment" spellcheck="true"># &#x8BE5;&#x65B9;&#x6CD5;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x51FD;&#x6570;&#x540D;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x540D;&#x79F0;&#x3002;</span>
+app<span class="token punctuation">.</span>add_template_filter<span class="token punctuation">(</span>filter_mod_1<span class="token punctuation">,</span> <span class="token string">&apos;my_mod_1&apos;</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="token comment" spellcheck="true"># &#x901A;&#x8FC7;&#x88C5;&#x9970;&#x5668;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;&#x88C5;&#x9970;&#x5668;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x8FC7;&#x6EE4;&#x5668;&#x540D;&#x79F0;</span>
+<span class="token comment" spellcheck="true"># &#x8FC7;&#x6EE4;&#x5668;&#x51FD;&#x6570;&#x63A5;&#x6536;&#x53D8;&#x91CF;</span>
+@app<span class="token punctuation">.</span>template_filter<span class="token punctuation">(</span><span class="token string">&apos;my_mod&apos;</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">filter_mod</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> num <span class="token operator">%</span> <span class="token number">2</span>
+</code></pre>
+<p>&#x5E26;&#x53C2;&#x6570;&#x8FC7;&#x6EE4;&#x5668;</p>
+<pre><code class="lang-python">
+@app<span class="token punctuation">.</span>template_filter<span class="token punctuation">(</span><span class="token string">&apos;filter_list&apos;</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">filter_list</span><span class="token punctuation">(</span>li<span class="token punctuation">,</span> start<span class="token punctuation">,</span> end<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;&#x81EA;&#x5B9A;&#x4E49;&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x622A;&#x53D6;&#x5217;&#x8868;&#x533A;&#x95F4;&quot;&quot;&quot;</span>
+    <span class="token keyword">return</span> li<span class="token punctuation">[</span>start<span class="token punctuation">:</span>end<span class="token punctuation">]</span>
+</code></pre>
+<p>&#x5728;&#x6A21;&#x677F;&#x4E2D;&#x8C03;&#x7528;&#x4F20;&#x53C2;&#x6570;&#x8FC7;&#x6EE4;&#x5668;&#x540E;&#x9762;&#x52A0;&#x5C0F;&#x62EC;&#x53F7;&#xFF0C;&#x5C31;&#x8DDF;python&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x4E00;&#x6837;&#xFF1A;</p>
+<pre><code class="lang-python">
+    <span class="token punctuation">{</span><span class="token punctuation">{</span>a<span class="token operator">|</span>my_mod<span class="token punctuation">}</span><span class="token punctuation">}</span>   <span class="token punctuation">{</span><span class="token comment" spellcheck="true">#&#x6CA1;&#x53C2;&#x6570;#}</span>
+
+    <span class="token punctuation">{</span><span class="token punctuation">{</span>b<span class="token operator">|</span>filter_list<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true"># &#x6709;&#x53C2;&#x6570;#}</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">Flask &#x6846;&#x67B6; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-05-03 16:03:18
+</span></footer>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../chapter02/jinja2语法.html" class="navigation navigation-prev " aria-label="Previous page: 基本语法"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../chapter02/Flask_WTF扩展.html" class="navigation navigation-next " aria-label="Next page: Flask-WTF扩展"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/fontsettings.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"tbfed-pagefooter":{"copyright":"Flask 框架","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"fontSettings":{"theme":"white","family":"msyh","size":2},"pdf":{"pageNumbers":true,"fontSize":18,"paperSize":"a4","margin":{"right":30,"left":30,"top":30,"bottom":50}},"prism":{},"splitter":{},"fontsettings":{"family":"sans","size":2,"theme":"white"},"toggle-chapters":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+    </body>
+    <!-- End of book Flask 框架 -->
+</html>

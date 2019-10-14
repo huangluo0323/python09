@@ -1,0 +1,1153 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book Flask 框架 -->
+    <head>
+        <!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Flask celery应用 | Flask 框架</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="author" content="huangguifeng">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-prism/prism.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-tbfed-pagefooter/footer.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="../chapter04/邮件扩展.html" />
+    
+
+        <!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+        
+    <div class="book"
+        data-level="4.3"
+        data-chapter-title="Flask celery应用"
+        data-filepath="chapter04/celery.md"
+        data-basepath=".."
+        data-revision="Mon May 14 2018 11:44:22 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Flask 框架
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="chapter01/简介.html">
+            
+                
+                    <a href="../chapter01/简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Flask 视图
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="chapter01/创建项目.html">
+            
+                
+                    <a href="../chapter01/创建项目.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        创建项目
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter01/路由配置.html">
+            
+                
+                    <a href="../chapter01/路由配置.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        路由配置
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter01/请求参数.html">
+            
+                
+                    <a href="../chapter01/请求参数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        请求参数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="chapter01/abort函数.html">
+            
+                
+                    <a href="../chapter01/abort函数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        abort函数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="chapter01/重定向.html">
+            
+                
+                    <a href="../chapter01/重定向.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        重定向
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="chapter01/响应.html">
+            
+                
+                    <a href="../chapter01/响应.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        响应数据
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="chapter01/cookie.html">
+            
+                
+                    <a href="../chapter01/cookie.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        Cookie
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter01/session.html">
+            
+                
+                    <a href="../chapter01/session.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        Session
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="chapter01/请求钩子.html">
+            
+                
+                    <a href="../chapter01/请求钩子.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        请求钩子
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="chapter01/上下文.html">
+            
+                
+                    <a href="../chapter01/上下文.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.</b>
+                        
+                        Flask 上下文
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="chapter02/index.html">
+            
+                
+                    <a href="../chapter02/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Flask 模板
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="chapter02/jinja2模板介绍.html">
+            
+                
+                    <a href="../chapter02/jinja2模板介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        jinja2模板介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="chapter02/模板渲染.html">
+            
+                
+                    <a href="../chapter02/模板渲染.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        模板渲染
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="chapter02/jinja2语法.html">
+            
+                
+                    <a href="../chapter02/jinja2语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        基本语法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="chapter02/过滤器.html">
+            
+                
+                    <a href="../chapter02/过滤器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        过滤器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="chapter02/Flask_WTF扩展.html">
+            
+                
+                    <a href="../chapter02/Flask_WTF扩展.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Flask-WTF扩展
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="chapter02/宏.html">
+            
+                
+                    <a href="../chapter02/宏.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        jinja2 宏
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="chapter02/模板继承.html">
+            
+                
+                    <a href="../chapter02/模板继承.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        模板继承
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="chapter02/模板包含.html">
+            
+                
+                    <a href="../chapter02/模板包含.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        模板包含
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="chapter02/特殊变量.html">
+            
+                
+                    <a href="../chapter02/特殊变量.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.9.</b>
+                        
+                        特殊变量
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="chapter03/index.html">
+            
+                
+                    <a href="../chapter03/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Flask 模型
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="chapter03/数据库连接.html">
+            
+                
+                    <a href="../chapter03/数据库连接.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        数据库连接
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="chapter03/模型类创建.html">
+            
+                
+                    <a href="../chapter03/模型类创建.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        创建模型类
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="chapter03/数据保存.html">
+            
+                
+                    <a href="../chapter03/数据保存.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        数据保存
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="chapter03/数据查询.html">
+            
+                
+                    <a href="../chapter03/数据查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        数据查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="chapter03/Flask-Script扩展命令行.html">
+            
+                
+                    <a href="../chapter03/Flask-Script扩展命令行.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        Flask-Script扩展命令行
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="chapter03/数据库迁移.html">
+            
+                
+                    <a href="../chapter03/数据库迁移.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        数据库迁移
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="chapter03/综合案例.html">
+            
+                
+                    <a href="../chapter03/综合案例.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                        综合案例
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="chapter04/index.html">
+            
+                
+                    <a href="../chapter04/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Flask 常用功能
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="chapter04/蓝图.html">
+            
+                
+                    <a href="../chapter04/蓝图.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Flask 蓝图
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="chapter04/邮件扩展.html">
+            
+                
+                    <a href="../chapter04/邮件扩展.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Flask 邮件扩展
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.3" data-path="chapter04/celery.html">
+            
+                
+                    <a href="../chapter04/celery.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        Flask celery应用
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Flask 框架</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="celery-&#x5206;&#x5E03;&#x5F0F;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x5165;&#x95E8;">Celery &#x5206;&#x5E03;&#x5F0F;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x5165;&#x95E8;</h1>
+<h2 id="&#x4E00;&#x3001;celery&#x4ECB;&#x7ECD;&#x548C;&#x57FA;&#x672C;&#x4F7F;&#x7528;">&#x4E00;&#x3001;Celery&#x4ECB;&#x7ECD;&#x548C;&#x57FA;&#x672C;&#x4F7F;&#x7528;</h2>
+<p>Celery &#x662F;&#x4E00;&#x4E2A; &#x57FA;&#x4E8E;python&#x5F00;&#x53D1;&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x5F02;&#x6B65;&#x6D88;&#x606F;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#xFF0C;&#x901A;&#x8FC7;&#x5B83;&#x53EF;&#x4EE5;&#x8F7B;&#x677E;&#x7684;&#x5B9E;&#x73B0;&#x4EFB;&#x52A1;&#x7684;&#x5F02;&#x6B65;&#x5904;&#x7406;&#xFF0C; &#x5982;&#x679C;&#x4F60;&#x7684;&#x4E1A;&#x52A1;&#x573A;&#x666F;&#x4E2D;&#x9700;&#x8981;&#x7528;&#x5230;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x4F7F;&#x7528;celery&#x3002;</p>
+<p>Celery&#x662F;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x5B8C;&#x5907;&#x5373;&#x63D2;&#x5373;&#x7528;&#x7684;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x3002;&#x5B83;&#x4F7F;&#x5F97;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x8003;&#x8651;&#x590D;&#x6742;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F7F;&#x7528;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x3002; celery&#x9002;&#x7528;&#x5F02;&#x6B65;&#x5904;&#x7406;&#x95EE;&#x9898;&#xFF0C;&#x5F53;&#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x3001;&#x6216;&#x8005;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;, &#x56FE;&#x50CF;&#x5904;&#x7406;&#x7B49;&#x7B49;&#x4E00;&#x4E9B;&#x6BD4;&#x8F83;&#x8017;&#x65F6;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x5C06;&#x5176;&#x5F02;&#x6B65;&#x6267;&#x884C;&#xFF0C;&#x8FD9;&#x6837;&#x7528;&#x6237;&#x4E0D;&#x9700;&#x8981;&#x7B49;&#x5F85;&#x5F88;&#x4E45;&#xFF0C;&#x63D0;&#x9AD8;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x3002; </p>
+<p>celery&#x7684;&#x7279;&#x70B9;&#x662F;&#xFF1A;</p>
+<p>&#x7B80;&#x5355;&#xFF0C;&#x6613;&#x4E8E;&#x4F7F;&#x7528;&#x548C;&#x7EF4;&#x62A4;&#xFF0C;&#x6709;&#x4E30;&#x5BCC;&#x7684;&#x6587;&#x6863;&#x3002;
+&#x9AD8;&#x6548;&#xFF0C;&#x5355;&#x4E2A;celery&#x8FDB;&#x7A0B;&#x6BCF;&#x5206;&#x949F;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x6570;&#x767E;&#x4E07;&#x4E2A;&#x4EFB;&#x52A1;&#x3002;
+&#x7075;&#x6D3B;&#xFF0C;celery&#x4E2D;&#x51E0;&#x4E4E;&#x6BCF;&#x4E2A;&#x90E8;&#x5206;&#x90FD;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x3002;
+celery&#x975E;&#x5E38;&#x6613;&#x4E8E;&#x96C6;&#x6210;&#x5230;&#x4E00;&#x4E9B;web&#x5F00;&#x53D1;&#x6846;&#x67B6;&#x4E2D;.</p>
+<p>Celery &#x5B89;&#x88C5;</p>
+<pre><code>pip install -U Celery
+</code></pre><h3 id="&#x4EFB;&#x52A1;&#x961F;&#x5217;">&#x4EFB;&#x52A1;&#x961F;&#x5217;</h3>
+<p>&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x662F;&#x4E00;&#x79CD;&#x8DE8;&#x7EBF;&#x7A0B;&#x3001;&#x8DE8;&#x673A;&#x5668;&#x5DE5;&#x4F5C;&#x7684;&#x4E00;&#x79CD;&#x673A;&#x5236;.</p>
+<p>&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4E2D;&#x5305;&#x542B;&#x79F0;&#x4F5C;&#x4EFB;&#x52A1;&#x7684;&#x5DE5;&#x4F5C;&#x5355;&#x5143;&#x3002;&#x6709;&#x4E13;&#x95E8;&#x7684;&#x5DE5;&#x4F5C;&#x8FDB;&#x7A0B;&#x6301;&#x7EED;&#x4E0D;&#x65AD;&#x7684;&#x76D1;&#x89C6;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#xFF0C;&#x5E76;&#x4ECE;&#x4E2D;&#x83B7;&#x5F97;&#x65B0;&#x7684;&#x4EFB;&#x52A1;&#x5E76;&#x5904;&#x7406;.</p>
+<p>celery&#x901A;&#x8FC7;&#x6D88;&#x606F;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#xFF0C;&#x901A;&#x5E38;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x53EB;Broker(&#x4E2D;&#x95F4;&#x4EBA;)&#x6765;&#x534F;client(&#x4EFB;&#x52A1;&#x7684;&#x53D1;&#x51FA;&#x8005;)&#x548C;worker(&#x4EFB;&#x52A1;&#x7684;&#x5904;&#x7406;&#x8005;). clients&#x53D1;&#x51FA;&#x6D88;&#x606F;&#x5230;&#x961F;&#x5217;&#x4E2D;&#xFF0C;broker&#x5C06;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x4FE1;&#x606F;&#x6D3E;&#x53D1;&#x7ED9;worker&#x6765;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x2003;&#x4E00;&#x4E2A;celery&#x7CFB;&#x7EDF;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x5F88;&#x591A;&#x7684;worker&#x548C;broker&#xFF0C;&#x53EF;&#x589E;&#x5F3A;&#x6A2A;&#x5411;&#x6269;&#x5C55;&#x6027;&#x548C;&#x9AD8;&#x53EF;&#x7528;&#x6027;&#x80FD;&#x3002;</p>
+<div id="img">
+    <img src="img/09.jpg" width="800">
+</div>
+
+<h3 id="borker">borker</h3>
+<p>Celery&#x9700;&#x8981;&#x4E00;&#x79CD;&#x89E3;&#x51B3;&#x6D88;&#x606F;&#x7684;&#x53D1;&#x9001;&#x548C;&#x63A5;&#x53D7;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x79CD;&#x7528;&#x6765;&#x5B58;&#x50A8;&#x6D88;&#x606F;&#x7684;&#x7684;&#x4E2D;&#x95F4;&#x88C5;&#x7F6E;&#x53EB;&#x505A;message broker, &#x4E5F;&#x53EF;&#x53EB;&#x505A;&#x6D88;&#x606F;&#x4E2D;&#x95F4;&#x4EBA;&#x3002;</p>
+<p>Celery&#x7684;&#x9ED8;&#x8BA4;broker&#x662F;RabbitMQ, &#x4EC5;&#x9700;&#x914D;&#x7F6E;&#x4E00;&#x884C;&#x5C31;&#x53EF;&#x4EE5;</p>
+<pre><code>broker_url = &apos;amqp://guest:guest@localhost:5672//&apos;
+</code></pre><p>rabbitMQ &#x6CA1;&#x88C5;&#x7684;&#x8BDD;&#x8BF7;&#x88C5;&#x4E00;&#x4E0B;&#xFF0C;<a href="http://docs.celeryproject.org/en/latest/getting-started/brokers/rabbitmq.html#id3" target="_blank">&#x5B89;&#x88C5;rabbitMQ&#x53C2;&#x8003;</a></p>
+<p>&#x4F7F;&#x7528;Redis&#x505A;broker&#x4E5F;&#x53EF;&#x4EE5;,&#x9700;&#x8981;&#x5B89;&#x88C5;redis&#x7EC4;&#x4EF6;</p>
+<pre><code>pip install -U &quot;celery[redis]&quot;
+</code></pre><p>&#x914D;&#x7F6E;&#xFF1A;</p>
+<p>&#x914D;&#x7F6E;&#x6D88;&#x606F;&#x4E2D;&#x95F4;&#x4EBA;&#x5730;&#x5740;&#xFF1A;</p>
+<pre><code>app.conf.broker_url = &apos;redis://localhost:6379/0&apos;
+</code></pre><p>&#x5982;&#x679C;&#x60F3;&#x83B7;&#x53D6;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x4E00;&#x4E0B;&#x628A;&#x4EFB;&#x52A1;&#x7ED3;&#x679C;&#x5B58;&#x5728;&#x54EA;</p>
+<pre><code>app.conf.result_backend = &apos;redis://localhost:6379/0&apos;
+</code></pre><h3 id="&#x521B;&#x5EFA;&#x5E94;&#x7528;">&#x521B;&#x5EFA;&#x5E94;&#x7528;</h3>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;celery application &#x7528;&#x6765;&#x5B9A;&#x4E49;&#x4F60;&#x7684;&#x4EFB;&#x52A1;&#x5217;&#x8868;&#x3002;</p>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x6587;&#x4EF6; tasks.py</p>
+<pre><code class="lang-python"><span class="token keyword">from</span> celery <span class="token keyword">import</span> Celery
+
+<span class="token comment" spellcheck="true"># Celery&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x7ED9;&#x5176;&#x8BBE;&#x5B9A;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#xFF0C; &#x7B2C;&#x4E8C;&#x53C2;&#x6570;&#x6211;&#x4EEC;&#x8BBE;&#x5B9A;&#x4E00;&#x4E2A;&#x4E2D;&#x95F4;&#x4EBA;broker, &#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4F7F;&#x7528;Redis&#x4F5C;&#x4E3A;&#x4E2D;&#x95F4;&#x4EBA;&#x3002;</span>
+
+app <span class="token operator">=</span> Celery<span class="token punctuation">(</span><span class="token string">&apos;test&apos;</span><span class="token punctuation">,</span> broker<span class="token operator">=</span><span class="token string">&apos;redis://192.168.20.71:6379/0&apos;</span><span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true"># &#x4EFB;&#x52A1;&#x51FD;&#x6570;&#xFF0C;&#x901A;&#x8FC7;&#x52A0;&#x4E0A;&#x88C5;&#x9970;&#x5668;app.task, &#x5C06;&#x5176;&#x6CE8;&#x518C;&#x5230;broker&#x7684;&#x961F;&#x5217;&#x4E2D;&#x3002;</span>
+@app<span class="token punctuation">.</span>task
+<span class="token keyword">def</span> <span class="token function">print_task</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;my celery &#x5F02;&#x6B65;&#x4EFB;&#x52A1;&quot;</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5728;&#x521B;&#x5EFA;&#x5DE5;&#x4F5C;&#x8005;worker&#xFF0C; &#x7B49;&#x5F85;&#x5904;&#x7406;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;.</p>
+<p>&#x8FDB;&#x5165;&#x5230; tasks.py&#x76EE;&#x5F55;&#x4E0B;</p>
+<pre><code>celery -A tasks worker -l info
+</code></pre><p>&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;&#x662F;&#x5728;windows&#x4E0B;&#x4F7F;&#x7528;celery 3.1.17&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#x53EF;&#x80FD;&#x4F1A;&#x62A5;&#x9519;&#x8BF7;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x547D;&#x4EE4;&#x5F00;&#x542F;worker&#xFF1A;</p>
+<p>celery&#x5BF9;windows&#x652F;&#x6301;&#x4E0D;&#x592A;&#x597D;&#x3002;<a href="https://github.com/celery/celery/issues/2146" target="_blank">&#x53C2;&#x8003;GitHub&#x95EE;&#x9898;</a></p>
+<pre><code>celery -A tasks worker  -l info --pool=solo
+</code></pre><div id="img">
+    <img src="img/10.jpg" width="800">
+</div>
+
+
+<h3 id="&#x8C03;&#x7528;&#x4EFB;&#x52A1;">&#x8C03;&#x7528;&#x4EFB;&#x52A1;</h3>
+<p>&#x4EFB;&#x52A1;&#x52A0;&#x5165;&#x5230;broker&#x961F;&#x5217;&#x4E2D;&#x3002;&#x5982;&#x4F55;&#x5C06;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x52A0;&#x5165;&#x5230;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x53EF;&#x4F7F;&#x7528;delay()&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-python"><span class="token keyword">from</span> tasks <span class="token keyword">import</span> <span class="token operator">*</span>
+print_task<span class="token punctuation">.</span>delay<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+&#x6216;&#x8005;&#xFF1A;
+
+print_task<span class="token punctuation">.</span>apply_async<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<div id="img">
+    <div src="img/11.jpg" widht="800">
+</div>
+
+<p>&#x8C03;&#x7528;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x540E;&#xFF0C;&#x5728;worker&#x7684;&#x63A7;&#x5236;&#x53F0;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x88AB;&#x6267;&#x884C;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;AsyncResult&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x68C0;&#x67E5;&#x4EFB;&#x52A1;&#x7684;&#x72B6;&#x6001;&#x6216;&#x8005;&#x83B7;&#x5F97;&#x4EFB;&#x52A1;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x3002;</p>
+<h3 id="&#x4FDD;&#x5B58;&#x7ED3;&#x679C;">&#x4FDD;&#x5B58;&#x7ED3;&#x679C;</h3>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x8DDF;&#x8E2A;&#x4EFB;&#x52A1;&#x7684;&#x72B6;&#x6001;&#xFF0C;Celery&#x9700;&#x8981;&#x5C06;&#x7ED3;&#x679C;&#x4FDD;&#x5B58;&#x5230;&#x67D0;&#x4E2A;&#x5730;&#x65B9;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x540C;&#x6837;&#x4FDD;&#x5B58;&#x5728;redis&#x4E2D;&#x3002;</p>
+<pre><code class="lang-python"><span class="token keyword">from</span> celery <span class="token keyword">import</span> Celery
+
+<span class="token comment" spellcheck="true"># Celery&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x7ED9;&#x5176;&#x8BBE;&#x5B9A;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#xFF0C; &#x7B2C;&#x4E8C;&#x53C2;&#x6570;&#x6211;&#x4EEC;&#x8BBE;&#x5B9A;&#x4E00;&#x4E2A;&#x4E2D;&#x95F4;&#x4EBA;broker, &#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4F7F;&#x7528;Redis&#x4F5C;&#x4E3A;&#x4E2D;&#x95F4;&#x4EBA;&#x3002;</span>
+<span class="token comment" spellcheck="true"># backend &#x6307;&#x5B9A;&#x4FDD;&#x5B58;&#x7ED3;&#x679C;,&#x6307;&#x5B9A;&#x4FDD;&#x5B58;&#x5728;redis&#x4E2D;&#x3002;</span>
+app <span class="token operator">=</span> Celery<span class="token punctuation">(</span><span class="token string">&apos;test&apos;</span><span class="token punctuation">,</span> broker<span class="token operator">=</span><span class="token string">&apos;redis://192.168.20.71:6379/0&apos;</span><span class="token punctuation">,</span>
+             backend<span class="token operator">=</span><span class="token string">&apos;redis://192.168.20.71:6379/1&apos;</span>
+             <span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true"># &#x4EFB;&#x52A1;&#x51FD;&#x6570;&#xFF0C;&#x901A;&#x8FC7;&#x52A0;&#x4E0A;&#x88C5;&#x9970;&#x5668;app.task, &#x5C06;&#x5176;&#x6CE8;&#x518C;&#x5230;broker&#x7684;&#x961F;&#x5217;&#x4E2D;&#x3002;</span>
+<span class="token comment" spellcheck="true"># &#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x5E76;&#x4E14;&#x589E;&#x52A0;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x3002;</span>
+@app<span class="token punctuation">.</span>task
+<span class="token keyword">def</span> <span class="token function">print_task</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x6B63;&#x5728;&#x6267;&#x884C;....&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> a <span class="token operator">+</span> b
+</code></pre>
+<div id="img">
+    <div src="img/12.jpg" widht="800">
+</div>
+
+<p>result&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x65B9;&#x6CD5;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>result</td>
+<td>&#x67E5;&#x770B;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;</td>
+</tr>
+<tr>
+<td>state/status</td>
+<td>PENDING &#x4EFB;&#x52A1;&#x6B63;&#x5728;&#x7B49;&#x5F85;&#x6267;&#x884C;&#x3002; STARTED &#x4EFB;&#x52A1;&#x5DF2;&#x7ECF;&#x5F00;&#x59CB;&#x3002; RETRY &#x4EFB;&#x52A1;&#x5C06;&#x88AB;&#x91CD;&#x8BD5;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x56E0;&#x4E3A;&#x5931;&#x8D25;&#x3002;FAILURE &#x8BE5;&#x4EFB;&#x52A1;&#x5F15;&#x53D1;&#x4E86;&#x4E00;&#x4E2A;&#x4F8B;&#x5916;&#xFF0C;&#x6216;&#x8005;&#x8D85;&#x8FC7;&#x4E86;&#x91CD;&#x8BD5;&#x9650;&#x5236;&#x3002;&#x8BE5;result&#x5C5E;&#x6027;&#x5305;&#x542B;&#x4EFB;&#x52A1;&#x5F15;&#x53D1;&#x7684;&#x5F02;&#x5E38;&#x3002; SUCCESS  &#x6267;&#x884C;&#x6210;&#x529F;</td>
+</tr>
+<tr>
+<td>failed</td>
+<td>&#x6267;&#x884C;&#x6210;&#x529F;&#x8FD4;&#x56DE; flask&#xFF0C;&#x6267;&#x884C;&#x5931;&#x8D25;&#x8FD4;&#x56DE; True</td>
+</tr>
+<tr>
+<td>forget</td>
+<td>&#x5220;&#x9664;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x7ED3;&#x679C;</td>
+</tr>
+<tr>
+<td>get</td>
+<td>&#x7B49;&#x5F85;&#x4EFB;&#x52A1;&#x51C6;&#x5907;&#x5C31;&#x7EEA;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF0C;&#x7B49;&#x5F85;&#x4EFB;&#x52A1;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x6B7B;&#x9501;&#x3002;&#x53C2;&#x6570;&#xFF1A;timeout&#x7B49;&#x5F85;&#x591A;&#x4E45;&#x8D85;&#x65F6;</td>
+</tr>
+<tr>
+<td>info</td>
+<td>&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x5C06;&#x5305;&#x542B;&#x8FD4;&#x56DE;&#x503C;&#x3002;&#x5982;&#x679C;&#x4EFB;&#x52A1;&#x5F15;&#x53D1;&#x5F02;&#x5E38;&#xFF0C;&#x5219;&#x8FD9;&#x5C06;&#x662F;&#x5F02;&#x5E38;&#x5B9E;&#x4F8B;&#x3002;</td>
+</tr>
+<tr>
+<td>ready</td>
+<td>True&#x5982;&#x679C;&#x4EFB;&#x52A1;&#x5DF2;&#x6267;&#x884C;&#x5219;&#x8FD4;&#x56DE;&#xFF0C;&#x5982;&#x679C;&#x4EFB;&#x52A1;&#x4ECD;&#x5728;&#x8FD0;&#x884C;&#xFF0C;&#x6302;&#x8D77;&#x6216;&#x6B63;&#x5728;&#x7B49;&#x5F85;&#x91CD;&#x8BD5;&#xFF0C;&#x5219;False&#x8FD4;&#x56DE;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p><a href="http://docs.celeryproject.org/en/latest/reference/celery.result.html#module-celery.result" target="_blank">&#x66F4;&#x591A;AsyncResult&#x5BF9;&#x8C61;&#x4FE1;&#x606F;</a></p>
+<h3 id="celery-&#x914D;&#x7F6E;">Celery &#x914D;&#x7F6E;</h3>
+<p>Celery &#x914D;&#x7F6E;&#x7B80;&#x5355;&#xFF0C;Celery&#x6709;&#x5F88;&#x591A;&#x914D;&#x7F6E;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7531;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x914D;&#x7F6E;&#xFF0C;&#x4F46;&#x662F;&#x9ED8;&#x8BA4;&#x7684;&#x914D;&#x7F6E;&#x90FD;&#x53EF;&#x4EE5;&#x6EE1;&#x8DB3;&#x5927;&#x90E8;&#x5206;&#x5E94;&#x7528;&#x573A;&#x666F;&#x4E86;&#x3002;
+&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;app&#x4E2D;&#x8BBE;&#x7F6E;&#xFF0C;&#x6216;&#x8005;&#x901A;&#x8FC7;&#x4E13;&#x6709;&#x7684;&#x914D;&#x7F6E;&#x6A21;&#x5757;&#x6765;&#x914D;&#x7F6E;&#x3002;</p>
+<p>&#x76F4;&#x63A5;&#x901A;&#x8FC7;app&#x914D;&#x7F6E;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="token keyword">from</span> celery <span class="token keyword">import</span> Celery
+app <span class="token operator">=</span> Celery<span class="token punctuation">(</span><span class="token string">&apos;test&apos;</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># &#x589E;&#x52A0;celery&#x914D;&#x7F6E;</span>
+app<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>update<span class="token punctuation">(</span>
+    result_backend<span class="token operator">=</span><span class="token string">&apos;redis://192.168.20.71:6379/2&apos;</span><span class="token punctuation">,</span>
+    broker_url<span class="token operator">=</span><span class="token string">&apos;redis://192.168.20.71:6379/1&apos;</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#xFF1A;
+&#x5BF9;&#x4E8E;&#x6BD4;&#x8F83;&#x5927;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x6A21;&#x5757;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8C03;&#x7528;app&#x7684;&#x51FD;&#x6570;&#x6765;&#x544A;&#x8BC9;Celery&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x7684;&#x914D;&#x7F6E;&#x6A21;&#x5757;&#x3002;
+&#x6211;&#x4EEC;&#x5C06;Celery&#x914D;&#x7F6E;&#x653E;&#x5728;celeryconfig.py&#x7684;&#x6A21;&#x5757;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x540D;&#x81EA;&#x5B9A;&#x4E49;&#x3002;&#x4F46;&#x9700;&#x8981;&#x786E;&#x4FDD;&#x80FD;&#x5728;tasks.py&#x4E2D;&#x5BFC;&#x5165;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5728;tasks.py&#x6A21;&#x5757; &#x540C;&#x7EA7;&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x914D;&#x7F6E;&#x6A21;&#x5757;celeryconfig.py:</p>
+<pre><code>broker_url = &apos;redis://192.168.20.71:6379/0&apos;
+result_backend = &apos;redis://192.168.20.71:6379/1&apos;
+</code></pre><p>&#x6CE8;&#x610F;&#xFF1A;celery 4.0&#x4EE5;&#x4E0A;&#x7684;&#x7248;&#x672C;&#x5F15;&#x5165;&#x4E86;&#x5C0F;&#x5199;&#x914D;&#x7F6E;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x4F1A;&#x517C;&#x5BB9;&#x5927;&#x5199;&#x914D;&#x7F6E;&#x3002;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x65E7;&#x7248;&#x672C;&#xFF0C;&#x4F1A;&#x8BC6;&#x522B;&#x4E0D;&#x4E86;&#x5C0F;&#x5199;&#x914D;&#x7F6E;&#xFF0C;<a href="http://docs.celeryproject.org/en/master/userguide/configuration.html#database-backend-settings" target="_blank">&#x66F4;&#x591A;Celery&#x914D;&#x7F6E;&#x53C2;&#x8003;.</a></p>
+<p>&#x4FEE;&#x6539;tasks.py&#x6A21;&#x5757;&#xFF1A;</p>
+<pre><code>import time
+from celery import Celery
+import celeryconfig
+
+
+app = Celery(&apos;test&apos;)
+
+# &#x52A0;&#x8F7D;celery&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x914D;&#x7F6E;
+app.config_from_object(celeryconfig)
+
+
+
+# &#x4EFB;&#x52A1;&#x51FD;&#x6570;&#xFF0C;&#x901A;&#x8FC7;&#x52A0;&#x4E0A;&#x88C5;&#x9970;&#x5668;app.task, &#x5C06;&#x5176;&#x6CE8;&#x518C;&#x5230;broker&#x7684;&#x961F;&#x5217;&#x4E2D;&#x3002;
+# &#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x5E76;&#x4E14;&#x589E;&#x52A0;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x3002;
+@app.task
+def print_task(a, b):
+    time.sleep(20)
+    print(&quot;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x6B63;&#x5728;&#x6267;&#x884C;....&quot;)
+    return a + b
+</code></pre><h3 id="&#x5728;&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;celery">&#x5728;&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;celery</h3>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; celery_test&#x76EE;&#x5F55;&#x4F5C;&#x4E3A;celery&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x3002;</p>
+<div id="img">
+    <img src="img/13.jpg" width="800">
+</div>
+
+<p>celery.py &#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code class="lang-python">
+
+<span class="token keyword">from</span> celery <span class="token keyword">import</span> Celery
+<span class="token keyword">from</span> <span class="token punctuation">.</span> <span class="token keyword">import</span> celeryconfig
+
+<span class="token comment" spellcheck="true"># &#x521B;&#x5EFA;celery&#x5E94;&#x7528;</span>
+app <span class="token operator">=</span> Celery<span class="token punctuation">(</span><span class="token string">&apos;u_test&apos;</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># &#x52A0;&#x8F7D;celery&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x914D;&#x7F6E;</span>
+app<span class="token punctuation">.</span>config_from_object<span class="token punctuation">(</span>celeryconfig<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># &#x81EA;&#x52A8;&#x641C;&#x7D22;&#x4EFB;&#x52A1;&#xFF0C;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x540D;</span>
+app<span class="token punctuation">.</span>autodiscover_tasks<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&apos;celery_test&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<p>celeryconfig.py &#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="token comment" spellcheck="true"># &#x6D88;&#x606F;&#x4F20;&#x8F93;&#x7684;&#x4E2D;&#x95F4;&#x4EBA; broker</span>
+broker_url <span class="token operator">=</span> <span class="token string">&apos;redis://192.168.20.71:6379/0&apos;</span>
+<span class="token comment" spellcheck="true"># &#x4FDD;&#x5B58;&#x7ED3;&#x679C;&#x540E;&#x7AEF;</span>
+result_backend <span class="token operator">=</span> <span class="token string">&apos;redis://192.168.20.71:6379/1&apos;</span>
+</code></pre>
+<p>tasks.py &#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code>from .celery import app
+
+@app.task
+def print_task(a, b):
+
+    print(&quot;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x6B63;&#x5728;&#x6267;&#x884C;....&quot;)
+    return a + b
+
+@app.task
+def print_task1(a, b):
+    print(&quot;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x6B63;&#x5728;&#x6267;&#x884C;....&quot;)
+    return a + b
+
+@app.task
+def print_task2(a, b):
+    print(&quot;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x6B63;&#x5728;&#x6267;&#x884C;....&quot;)
+    return a + b
+
+@app.task
+def print_task3(a, b):
+    print(&quot;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x6B63;&#x5728;&#x6267;&#x884C;....&quot;)
+    return a + b
+</code></pre><p>&#x542F;&#x52A8;worker&#x5E76;&#x5236;&#x5B9A;&#x961F;&#x5217;&#x540D;&#x79F0;&#x4E3A; &apos;myqueue&apos;:</p>
+<pre><code>celery -A celery_test worker -l info -Q &apos;myqueue&apos;
+</code></pre><h3 id="&#x8C03;&#x7528;&#x4EFB;&#x52A1;">&#x8C03;&#x7528;&#x4EFB;&#x52A1;</h3>
+<p>&#x8C03;&#x7528;&#x4EFB;&#x52A1;&#x4E4B;&#x524D;&#x4E00;&#x76F4;&#x4F7F;&#x7528;delay()&#x65B9;&#x6CD5;&#xFF0C;&#x8FD8;&#x6709;apply_async()&#x65B9;&#x6CD5;&#x4E5F;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x4EFB;&#x52A1;,apply_async()&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x63A5;&#x6536;&#x53C2;&#x6570;&#x3001;&#x6267;&#x884C;&#x9009;&#x9879;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;delay&#x65B9;&#x6CD5;&#x4E5F;&#x662F;&#x8C03;&#x7528; apply_async()&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x80FD;&#x914D;&#x7F6E;&#x6267;&#x884C;&#x9009;&#x9879;&#x3002;</p>
+<pre><code>print_task.apply_async((2, 2), queue=&apos;my_queue&apos;, countdown=10)
+</code></pre><p>&#x4EFB;&#x52A1;my_task&#x5C06;&#x4F1A;&#x88AB;&#x53D1;&#x9001;&#x5230;my_queue&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x53D1;&#x9001;10&#x79D2;&#x4E4B;&#x540E;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x60F3;&#x8981;&#x4F7F;&#x7528;delay()&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x4E14;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x6267;&#x884C;&#x9009;&#x9879;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;signature&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x5C01;&#x88C5;&#xFF0C;&#x5C06;&#x53C2;&#x6570;&#x4EE5;&#x53CA;&#x9009;&#x9879;&#x5C01;&#x88C5;&#x5230;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x4E2D;&#x3002;</p>
+<pre><code>In [31]: a = tasks.print_task.signature((3,2),countdown=10)
+
+In [32]: a.delay()
+</code></pre><h3 id="&#x4EFB;&#x52A1;&#x7EC4;">&#x4EFB;&#x52A1;&#x7EC4;</h3>
+<p>group: &#x4E00;&#x7EC4;&#x4EFB;&#x52A1;&#x5E76;&#x884C;&#x6267;&#x884C;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x7EC4;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x5E76;&#x53EF;&#x4EE5;&#x6309;&#x987A;&#x5E8F;&#x68C0;&#x7D22;&#x8FD4;&#x56DE;&#x503C;&#x3002;</p>
+<p>chain: &#x4EFB;&#x52A1;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#xFF0C;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x5B8C;&#x5C06;&#x6267;&#x884C;return&#x7ED3;&#x679C;&#x4F20;&#x9012;&#x7ED9;&#x4E0B;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x51FD;&#x6570;.</p>
+<p>group&#x4F7F;&#x7528;&#xFF1A;</p>
+<p>&#x5728;celery_test&#x540C;&#x7EA7;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;test.py&#x6587;&#x4EF6;</p>
+<pre><code>from celery_test.tasks import print_task
+from celery_test.tasks import print_task1
+from celery_test.tasks import print_task2
+from celery_test.tasks import print_task3
+from celery import group
+
+# &#x5C06;&#x591A;&#x4E2A;signature&#x653E;&#x5165;&#x540C;&#x4E00;&#x7EC4;&#x4E2D;
+my_group = group(print_task.s(2, 3), print_task1.s(1, 2),
+                 print_task2.s(100, 2), print_task3.s(1,2)
+                 )
+# &#x6267;&#x884C;&#x7EC4;&#x4EFB;&#x52A1;,&#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#x540C;&#x65F6;&#x6267;&#x884C;
+res = my_group.delay()
+# get&#x4F1A;&#x963B;&#x585E;&#x7B49;&#x5F85;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;
+print(ret.get())  # [5, 3, 3, 3]
+</code></pre><p>chain &#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code>from celery_test.tasks import print_task
+from celery_test.tasks import print_task1
+from celery_test.tasks import print_task2
+from celery_test.tasks import print_task3
+
+from celery import chain
+
+# chain &#x5C06;&#x591A;&#x4E2A;signature&#x7EC4;&#x6210;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x94FE;
+# print_task &#x7684;&#x8FD4;&#x56DE;&#x503C;&#x4F20;&#x7ED9;print_task1&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;
+# print_task1 &#x7684;&#x8FD4;&#x56DE;&#x503C;&#x4F20;&#x7ED9;print_task2&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;
+my_chain = chain(print_task.s(1, 3) | print_task1.s(3) | print_task2.s(6))
+
+# &#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#x987A;&#x5E8F;&#x6267;&#x884C;
+res = my_chain.delay()
+# &#x6700;&#x7EC8;&#x8FD4;&#x56DE;print_task2 &#x7684;&#x7ED3;&#x679C;
+print(res.get())  # &#x8FD4;&#x56DE;13
+</code></pre><h3 id="&#x4EFB;&#x52A1;&#x8DEF;&#x7531;">&#x4EFB;&#x52A1;&#x8DEF;&#x7531;</h3>
+<p>&#x5728;&#x751F;&#x4EA7;&#x4E2D;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;worker&#xFF0C;&#x5206;&#x522B;&#x5904;&#x7406;&#x4E0D;&#x540C;&#x7684;&#x4EFB;&#x52A1;&#x3002;&#x6BD4;&#x5982;&#x4E00;&#x4E2A;worker&#x5904;&#x7406;&#x56FE;&#x7247;&#x4E0A;&#x4F20;&#xFF0C;&#x4E00;&#x4E2A;worker&#x4E13;&#x95E8;&#x5904;&#x7406;&#x77ED;&#x4FE1;&#x53D1;&#x9001;&#x3002;
+&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x961F;&#x5217;&#xFF0C;&#x4E00;&#x4E2A;&#x4E13;&#x95E8;&#x7528;&#x4E8E;&#x56FE;&#x7247;&#x4E0A;&#x4F20;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x548C;&#x56FE;&#x50CF;&#x5904;&#x7406;&#xFF0C;&#x4E00;&#x4E2A;&#x7528;&#x6765;&#x77ED;&#x4FE1;&#x53D1;&#x9001;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x3002;
+celery&#x652F;&#x6301;&#x961F;&#x5217;&#x8DEF;&#x7531;&#x8BBE;&#x7F6E;&#x7684;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x8C03;&#x7528;&#x4EFB;&#x52A1;&#x7684;&#x65F6;&#x5019;&#x6307;&#x5B9A;&#x961F;&#x5217;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x5728;tasks.py&#x4E2D;&#x589E;&#x52A0;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code>
+@app.task
+def upload_img():
+    print(&quot;upload_img &#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x6B63;&#x5728;&#x6267;&#x884C;....&quot;)
+
+
+@app.task
+def handle_img():
+    print(&quot;handel_img &#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x6B63;&#x5728;&#x6267;&#x884C;....&quot;)
+
+@app.task
+def send_message():
+    print(&quot;send_message &#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x6B63;&#x5728;&#x6267;&#x884C;....&quot;)
+</code></pre><p>celeryconfig.py&#x6A21;&#x5757;&#x4E2D;&#x914D;&#x7F6E; CELERY_ROUTES &#x9009;&#x9879;&#xFF1A;</p>
+<pre><code>broker_url = &apos;redis://localhost:6379/0&apos;
+result_backend = &apos;redis://localhost:6379/1&apos;
+
+task_routes = ({
+    &apos;celery_test.tasks.upload_img&apos;: {&apos;queue&apos;: &apos;queue1&apos;},
+    &apos;celery_test.tasks.handle_img&apos;: {&apos;queue&apos;: &apos;queue1&apos;},
+    &apos;celery_test.tasks.send_message&apos;: {&apos;queue&apos;: &apos;queue2&apos;},
+    },
+)
+</code></pre><p>&#x5728;test.py&#x6A21;&#x5757;&#x4E2D;&#x5C06;&#x8C03;&#x7528;&#x4EFB;&#x52A1;&#xFF1A;</p>
+<pre><code>from celery_test.tasks import *
+
+# &#x5C06;&#x4EFB;&#x52A1;&#x52A0;&#x5165;&#x961F;&#x5217;
+a = upload_img.delay()
+print(a)
+b = handle_img.delay()
+print(b)
+c = send_message.delay()
+print(c)
+</code></pre><p>&#x6253;&#x5F00;&#x4E24;&#x4E2A;&#x7EC8;&#x7AEF;&#x5F00;&#x542F;&#x4E24;&#x4E2A;worker&#xFF0C;&#x4E24;&#x4E2A;&#x961F;&#x5217;</p>
+<pre><code>celery -A celery_test  worker -l info -Q &apos;queue1&apos;
+
+celery -A celery_test  worker -l info -Q &apos;queue2&apos;
+</code></pre><p>&#x4E5F;&#x6267;&#x884C;&#x4E00;&#x4E2A;worker&#x5904;&#x7406;&#x4E24;&#x4E2A;&#x961F;&#x5217;</p>
+<pre><code>celery -A celery_test  worker -l info -Q queue2,queue1
+</code></pre><h2 id="&#x4E8C;&#x3001;celery-&#x5B9E;&#x73B0;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;">&#x4E8C;&#x3001;celery &#x5B9E;&#x73B0;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;</h2>
+<p>celery &#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5468;&#x671F;&#x6027;&#x4EFB;&#x52A1;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8981;&#x67D0;&#x4E2A;&#x4EFB;&#x52A1;&#x5468;&#x671F;&#x6027;&#x6267;&#x884C;&#xFF0C;&#x90A3;&#x4E48;&#x9700;&#x8981;&#x589E;&#x52A0;beat_schedule &#x914D;&#x7F6E;&#x4FE1;&#x606F;.</p>
+<p>&#x5728;celeryconfig.py&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x589E;&#x52A0;</p>
+<pre><code># &#x914D;&#x7F6E;&#x5468;&#x671F;&#x6027;&#x4EFB;&#x52A1;
+beat_schedule = {
+    &apos;every-5-seconds&apos;: # &#x4EFB;&#x52A1;&#x540D;&#x79F0;
+        {
+            &apos;task&apos;: &apos;celery_test.tasks.upload_img&apos;, # &#x6307;&#x5B9A;&#x4EFB;&#x52A1;
+            &apos;schedule&apos;: 5.0,  # &#x6BCF;5&#x79D2;&#x6267;&#x884C;&#x4E00;&#x6B21;
+        }
+}
+</code></pre><p>&#x542F;&#x52A8;worker&#x6267;&#x884C;&#x5468;&#x671F;&#x6027;&#x4EFB;&#x52A1;&#xFF1A;</p>
+<p>&#x6CE8;&#x610F;&#x5982;&#x679C;&#x8981;&#x6267;&#x884C;&#x5468;&#x671F;&#x6027;&#x4EFB;&#x52A1;&#xFF0C;&#x542F;&#x52A8;&#x662F;&#x9700;&#x8981;&#x52A0; --beat &#x53C2;&#x6570;</p>
+<pre><code>celery -A celery_test  worker -l info -Q queue2,queue1 --beat
+</code></pre><p>&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x914D;&#x7F6E;</p>
+<ul>
+<li>task &#x4EFB;&#x52A1;&#x51FD;&#x6570;</li>
+<li>schedule &#x6267;&#x884C;&#x9891;&#x7387;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x65F6;&#x95F4;&#x79D2;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F; crontab&#x5BF9;&#x8C61;</li>
+<li>args &#x5217;&#x8868;&#x6216;&#x8005;&#x5143;&#x7956;&#xFF0C;&#x4F20;&#x9012;&#x7ED9;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;</li>
+<li>kwargs &#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#xFF0C;&#x5B57;&#x5178;&#x7C7B;&#x578B;</li>
+<li>options apply_async&#x51FD;&#x6570;&#x652F;&#x6301;&#x7684;&#x6267;&#x884C;&#x9009;&#x9879;</li>
+</ul>
+<pre><code>from celery.schedules import crontab
+
+beat_schedule = {
+    # &#x6BCF;&#x5468;&#x4E00;&#x65E9;&#x4E0A;7&#x70B9;&#x534A;&#x6267;&#x884C;
+    &apos;add-every-monday-morning&apos;: {
+        &apos;task&apos;: &apos;celery_test.tasks.upload_img&apos;,# &#x4EFB;&#x52A1;
+        &apos;schedule&apos;: crontab(hour=7, minute=30, day_of_week=1),#&#x65F6;&#x95F4;
+        &apos;args&apos;: (16, 16),#&#x53C2;&#x6570;
+    },
+}
+</code></pre><p>Crontab&#x65F6;&#x95F4;&#x8868;</p>
+<table>
+<thead>
+<tr>
+<th>&#x65F6;&#x95F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>crontab()</td>
+<td>&#x6BCF;&#x5206;&#x949F;&#x6267;&#x884C;&#x4E00;&#x6B21;</td>
+</tr>
+<tr>
+<td>crontab(minute=0, hour=0)</td>
+<td># &#x6BCF;&#x5929;&#x51CC;&#x6668;&#x5341;&#x4E8C;&#x70B9;&#x6267;&#x884C;</td>
+</tr>
+<tr>
+<td>crontab(minute=0, hour=&apos;*/3&apos;)</td>
+<td>&#x6BCF;&#x4E09;&#x5C0F;&#x65F6;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C;&#x5348;&#x591C;&#xFF0C;&#x4E0A;&#x5348;3&#x70B9;&#xFF0C;&#x4E0A;&#x5348;6&#x70B9;&#xFF0C;&#x4E0A;&#x5348;9&#x70B9;&#xFF0C;&#x4E2D;&#x5348;&#xFF0C;&#x4E0B;&#x5348;3&#x70B9;&#xFF0C;&#x4E0B;&#x5348;6&#x70B9;&#xFF0C;&#x665A;&#x4E0A;9&#x70B9;&#x3002;</td>
+</tr>
+<tr>
+<td>crontab(minute=&apos;*/15&apos;)</td>
+<td>&#x6BCF;15&#x5206;&#x949F;&#x6267;&#x884C;&#x4E00;&#x6B21;</td>
+</tr>
+<tr>
+<td>crontab(minute=&apos;*/10&apos;,hour=&apos;3,17,22&apos;, day_of_week=&apos;thu,fri&apos;)</td>
+<td>&#x6BCF;&#x5341;&#x5206;&#x949F;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C;&#x4F46;&#x4EC5;&#x5728;&#x5468;&#x56DB;&#x6216;&#x5468;&#x4E94;&#x7684;&#x4E0A;&#x5348;3-4&#x70B9;&#xFF0C;&#x4E0B;&#x5348;5-6&#x70B9;&#x548C;&#x4E0B;&#x5348;10-11&#x70B9;&#x4E4B;&#x95F4;&#x6267;&#x884C;&#x3002;</td>
+</tr>
+<tr>
+<td>crontab(0, 0,day_of_month=&apos;1-7,15-21&apos;)</td>
+<td>&#x5728;&#x672C;&#x6708;&#x7684;&#x7B2C;&#x4E00;&#x5468;&#x548C;&#x7B2C;&#x4E09;&#x5468;&#x6267;&#x884C;&#x3002;</td>
+</tr>
+<tr>
+<td>crontab(0, 0, day_of_month=&apos;2&apos;)</td>
+<td>&#x6BCF;&#x4E2A;&#x6708;&#x7684;&#x7B2C;&#x4E8C;&#x5929;&#x6267;&#x884C;&#x3002;</td>
+</tr>
+<tr>
+<td>crontab(minute=0, hour=&apos;*/3,8-17&apos;)</td>
+<td>&#x6BCF;3&#x5C0F;&#x65F6;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C;&#x4F46;&#x53EA;&#x5728;&#x4E0A;&#x5348;8&#x70B9;&#x81F3;&#x4E0B;&#x5348;5&#x70B9;&#xFF09;&#x4E4B;&#x95F4;&#x6267;&#x884C;&#x3002;</td>
+</tr>
+<tr>
+<td>crontab(0, 0, day_of_month=&apos;11&apos;,month_of_year=&apos;5&apos;)</td>
+<td>&#x6BCF;&#x5E74;5&#x6708;11&#x65E5;&#x6267;&#x884C;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5982;&#x679C;&#x5468;&#x671F;&#x6027;&#x4EFB;&#x52A1;&#x4E2D;&#x65AD;&#x540E;&#xFF0C;&#x60F3;&#x8981;&#x7EE7;&#x7EED;&#x4E0A;&#x4E00;&#x6B21;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x9700;&#x8981;&#x8BBF;&#x95EE;&#x6267;&#x884C;celery &#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x540D;&#x4E3A;celerybeat-schedule &#x7684;&#x6587;&#x4EF6;&#x3002;&#x4F7F;&#x7528;-s &#x53C2;&#x6570;&#x662F;&#x6587;&#x4EF6;&#x76EE;&#x5F55;</p>
+<pre><code>celery -A celery_test  worker -l info -Q queue2,queue1 --beat -s celerybeat-schedule
+</code></pre><h2 id="&#x4E09;&#x3001;flask&#x5F02;&#x6B65;&#x53D1;&#x9001;&#x90AE;&#x4EF6;">&#x4E09;&#x3001;flask&#x5F02;&#x6B65;&#x53D1;&#x9001;&#x90AE;&#x4EF6;</h2>
+<pre><code>from flask import Flask
+from celery import Celery
+from flask_mail import Mail, Message
+
+app = Flask(__name__)  #type:Flask
+
+app.config[&apos;CELERY_BROKER_URL&apos;] = &apos;redis://localhost:6379/15&apos;
+app.config[&apos;CELERY_RESULT_BACKEND&apos;] = &apos;redis://localhost:6379/15&apos;
+
+# &#x521B;&#x5EFA;celery&#x5B9E;&#x4F8B;
+celery_app = Celery(app.name, broker=app.config[&apos;CELERY_BROKER_URL&apos;],
+                    backend=app.config[&apos;CELERY_RESULT_BACKEND&apos;])
+
+# &#x4E3A;Celery&#x540C;&#x6B65;Flask&#x4E0A;&#x7684;&#x914D;&#x7F6E;
+celery_app.conf.update(app.config)
+
+# &#x914D;&#x7F6E; &#x53D1;&#x9001;&#x90AE;&#x7BB1;
+app.config.update(
+    DEBUG=True,
+    MAIL_SERVER=&apos;smtp.163.com&apos;,  # &#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;
+    MAIL_PROT=25,   # &#x90AE;&#x4EF6;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53E3;
+    MAIL_USE_TLS=True,  # &#x4F7F;&#x7528;tls &#x5B89;&#x5168;&#x534F;&#x8BAE;
+    MAIL_USERNAME=&apos;pydjango@163.com&apos;,  # &#x53D1;&#x9001;&#x90AE;&#x7BB1;
+    MAIL_PASSWORD=&apos;qwer1234&apos;,   # &#x5BC6;&#x7801;
+)
+
+mail = Mail(app)
+@app.route(&apos;/&apos;)
+def hello_world():
+    # &#x8C03;&#x7528;&#x4EFB;&#x52A1;&#xFF0C;&#x5C06;&#x4EFB;&#x52A1;&#x52A0;&#x5165;&#x4EFB;&#x52A1;&#x961F;&#x5217;
+    send_async_email.delay(&apos;&#x6765;&#x81EA;flask&apos;,app.config[&apos;MAIL_USERNAME&apos;],
+                           [&apos;pydjango@163.com&apos;],&apos;celery &#x5F02;&#x6B65;&#x53D1;&#x9001;&#x90AE;&#x4EF6;&apos;)
+    return &apos;Hello World!&apos;
+
+
+@celery_app.task
+def send_async_email(sub,sender,recipients,body):
+    &quot;&quot;&quot;&#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x4EFB;&#x52A1;&quot;&quot;&quot;
+    msg = Message(subject=sub, sender=sender, recipients=recipients,)
+    # &#x90AE;&#x4EF6;&#x5185;&#x5BB9;
+    msg.body = body
+
+    # &#x6DFB;&#x52A0;&#x9644;&#x4EF6; content_type&#x5BF9;&#x7167;&#x8868;&#xFF1A; http://tool.oschina.net/commons/
+    # &#x4E0A;&#x4F20;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#x4F5C;&#x4E3A;&#x9644;&#x4EF6;
+    msg.attach(filename=&apos;01.jpg&apos;,content_type=&apos;image/jpeg&apos;,data=open(&apos;01.jpg&apos;,&apos;rb&apos;).read())
+    # &#x56E0;&#x4E3A;Flask-Mail&#x9700;&#x8981;&#x5E94;&#x7528;&#x7684;context&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x5728;&#x8C03;&#x7528;send&#x65B9;&#x6CD5;&#x524D;&#x5148;&#x521B;&#x5EFA;&#x5E94;&#x7528;&#x7684;context&#x73AF;&#x5883;&#x3002;
+    with app.app_context():
+        mail.send(msg)
+
+if __name__ == &apos;__main__&apos;:
+    app.run()
+</code></pre><p>&#x5728;&#x9879;&#x76EE;&#x540C;&#x7EA7;&#x76EE;&#x5F55;&#x4E0B;&#x6267;&#x884C;&#x5F00;&#x542F;worker</p>
+<pre><code>celery -A TestCelery.celery_app worker -l info
+</code></pre><p>&#x5F53;&#x8BBF;&#x95EE; hello_world &#x89C6;&#x56FE;&#x65F6;&#xFF0C;&#x5C06;&#x4EFB;&#x52A1;&#x4EA4;&#x7ED9;worker&#x53BB;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x4F7F;&#x7528;celery&#x53D1;&#x9001;&#x90AE;&#x4EF6;&#xFF0C;&#x4E0D;&#x4F1A;&#x56E0;&#x4E3A;&#x7F51;&#x7EDC;&#x95EE;&#x9898;&#xFF0C;&#x4E0A;&#x4F20;&#x6162;&#x5BFC;&#x81F4;&#x7A0B;&#x5E8F;&#x963B;&#x585E;&#x3002;&#x76F4;&#x63A5;&#x5C06;&#x90AE;&#x4EF6;&#x4EA4;&#x7ED9;&#x540E;&#x53F0;&#x53BB;&#x53D1;&#x9001;&#xFF0C;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x3002;</p>
+<footer class="page-footer"><span class="copyright">Flask &#x6846;&#x67B6; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-05-03 16:38:10
+</span></footer></div></div>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../chapter04/邮件扩展.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Flask 邮件扩展"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/fontsettings.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"tbfed-pagefooter":{"copyright":"Flask 框架","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"fontSettings":{"theme":"white","family":"msyh","size":2},"pdf":{"pageNumbers":true,"fontSize":18,"paperSize":"a4","margin":{"right":30,"left":30,"top":30,"bottom":50}},"prism":{},"splitter":{},"fontsettings":{"family":"sans","size":2,"theme":"white"},"toggle-chapters":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+    </body>
+    <!-- End of book Flask 框架 -->
+</html>
